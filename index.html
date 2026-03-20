@@ -12,9 +12,6 @@
     <link rel="stylesheet" href="https://unpkg.com/leaflet-control-geocoder/dist/Control.Geocoder.css" />
     <script src="https://unpkg.com/leaflet-control-geocoder/dist/Control.Geocoder.js"></script>
 
-    <script src="https://cdn.jsdelivr.net/npm/leaflet-measure/dist/leaflet-measure.min.js"></script>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet-measure/dist/leaflet-measure.css" />
-
     <style>
         body { margin:0; padding:0; font-family: 'Segoe UI', sans-serif; }
         #map { height: 100vh; width: 100%; background: #fff; }
@@ -176,11 +173,9 @@
             });
         }
 
-        // Crear placeholders para control de capas
         var grupoDistritos = L.layerGroup().addTo(map);
         var grupoCalles = L.layerGroup().addTo(map);
 
-        // Control de capas (activo desde el inicio)
         L.control.layers({ 
             "Híbrido (Satélite + Nombres)": satelitalHibrido, 
             "Calles (Plano OSM)": osm 
@@ -191,8 +186,6 @@
         }).addTo(map);
 
         setTimeout(actualizarEtiquetasCalles, 500);
-
-        L.control.measure({primaryLengthUnit:'meters', primaryAreaUnit:'sqmeters'}).addTo(map);
 
     </script>
 </body>
